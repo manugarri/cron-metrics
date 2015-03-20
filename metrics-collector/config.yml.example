@@ -1,0 +1,37 @@
+#config file
+
+plan:
+    name: PLAN_NAME #name to the crontab
+    path: path_to_your_folder #not the modules, the main folder
+    user: ubuntu
+    environment: #this envvars are injected into every task
+         DEBUG_MODE: "false" #true to avoid writing data
+         CRAB: "true" #only if you are planning on running crab. Else every task will run 'uncrabed'
+
+#tasks go here
+tasks:
+  -  name: test
+     task_specs:
+         task: test_main.py
+         every: 1.minute
+     config:
+         KEY_EXAMPLE: foo # a password, token, anything required to run the task
+
+#IO objects, email delivery, database connections
+io:
+  -  name: postgres
+     config:
+         DB_USER:
+         DB_PWD:
+         DB_HOST:
+         DB_PORT:
+         DB_NAME:
+
+  -  name: email #example to send emails authenticated
+     config:
+         EMAIL_USER:
+         EMAIL_PASS:
+         EMAIL_SERVER: 
+         EMAIL_PORT: 
+         EMAIL_DOMAIN:
+         EMAIL_FROM:
