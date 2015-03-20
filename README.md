@@ -8,13 +8,15 @@ Implementation requiring Plan and Crab.
 
 
 ####Installation
-
+0. Install `sqlite3`
 1. `pip install -r requirements.txt`
 2. Crab specific steps:
 
   2.1 Need to add a `crabd.ini` file in either `~/.crab` or `/etc/crab`. 
   
-  2.2 recreate `crabdb.db`.
+  2.2 [recreate](http://crab.readthedocs.org/en/latest/server.html) `crabdb.db`:
+  
+      `% sqlite3 crab.db < doc/schema.txt`
   
   2.3 Download jquery and Font Awesome and install them on the `res` folder (specified in `crabd.ini`).
   
