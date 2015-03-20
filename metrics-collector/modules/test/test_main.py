@@ -9,7 +9,7 @@ from utils.send_email import send_email
 
 
 def test_main():
-    '''Main process for the Lead finder app'''
+    '''Main process for the test app'''
     print('starting test task')
     start = datetime.now()
     send_email(to = ['test@test.com'], subject = 'TEST CRON', text =  '{}'.format(start))
