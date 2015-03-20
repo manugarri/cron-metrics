@@ -11,5 +11,5 @@ READER_DICT = {
     }
 
 
-def init_reader(module, reader_type='redshift', **kw):
+def init_reader(module, reader_type, **kw):
     return READER_DICT[reader_type](module, **kw)
