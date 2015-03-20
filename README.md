@@ -31,8 +31,18 @@ Implementation requiring Plan and Crab.
 * Add that task on the `task` section of `config.yml`.
   * the `name` of the task should be the name of the folder you created for it.
   * task_specs should include the [plan](http://plan.readthedocs.org/job_definition.html) dsl for setting up a cron.
-  
+  * If you need to import some task specific variables, you can either use the `environment` paramenter on the task config, or use the `utils.get_task_config(task_name)` that returns an `Env` object with the task config as attributes.
 * Use `python start_cron.py write` to create the crontab with all the tasks, and start the crab dashboard.
 You can go to `localhost:8000` to see it in action.
 
 * Use `python start_cron.py clear` to empy the crontab, clean the `/logs` folder and kill `crabd`
+
+####Screenshots
+
+![](https://raw.githubusercontent.com/manugarri/cron-metrics/master/metrics-collector/Screenshot%20from%202015-03-19%2021%3A04%3A28.png)
+
+By using the `utils.crab_task` context manager, every task gets sent to crab, along with their stdout and stderr.
+
+![](https://raw.githubusercontent.com/manugarri/cron-metrics/master/metrics-collector/Screenshot%20from%202015-03-19%2021%3A03%3A36.png)
+
+You can see the history of each task.
