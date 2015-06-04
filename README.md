@@ -2,8 +2,8 @@
 Implementation of a monitoring system of interval cron tasks in Python. Useful for metrics tasks that need to run every n minutes.
 
 Implementation requiring Plan and Crab. 
-* [Plan](http://plan.readthedocs.org/) to create the crontab.
-* [Crab](http://crab.readthedocs.org/) to provide a dashboard to monitor the tasks.
+* [Plan](https://github.com/manugarri/Plan) to create the crontab.
+* [Crab](https://github.com/manugarri/crab) to provide a dashboard to monitor the tasks.
 
 
 
